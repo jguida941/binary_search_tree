@@ -15,21 +15,47 @@ A minimal example of a Binary Search Tree (BST) implemented with classes and rec
 
 ## Example
 ```python
-from bst import BinarySearchTree
+from binary_search_tree import BinarySearchTree  # adjust filename if different
 
 bst = BinarySearchTree()
-for v in [50, 30, 20, 40, 70, 60, 80]:
-    bst.insert(v)
+nodes = [50, 30, 20, 40, 70, 60, 80]
 
-print("Inorder:", bst.inorder())   # [20, 30, 40, 50, 60, 70, 80]
+# Insert
+for node in nodes:
+    bst.insert(node)
 
-from bst import BinarySearchTree
+# Search
+print('Search for 80:', bst.search(80))  # -> 80
 
-bst = BinarySearchTree()
-for val in [50, 30, 20, 40, 70, 60, 80]:
-    bst.insert(val)
-
-print("Inorder before delete:", bst.inorder())
-print("Search 80:", bst.search(80))
+# Inorder before/after delete
+print('Inorder before delete:', bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
 bst.delete(80)
-print("Inorder after delete:", bst.inorder())
+print('Inorder after delete :', bst.inorder())  # [20, 30, 40, 50, 60, 70]
+```
+
+## Extra Methods You Can Add
+
+- **min() / max()**
+```python
+def min(self):
+    node = self.root
+    while node and node.left:
+        node = node.left
+    return node.key if node else None
+
+def max(self):
+    node = self.root
+    while node and node.right:
+        node = node.right
+    return node.key if node else None
+```
+
+- **height()**
+```python
+def height(self, node=None):
+    if node is None:
+        node = self.root
+    if not node:
+        return -1  # empty tree has height -1
+    return 1 + max(self.height(node.left), self.height(node.right))
+```

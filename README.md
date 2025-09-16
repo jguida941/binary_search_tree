@@ -1,6 +1,9 @@
-# binary_search_tree
+# Binary Search Tree (BST) in Python
 
-# Simple Binary Search Tree in Python
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![Recursion](https://img.shields.io/badge/Recursion-Enabled-green)
+![Data Structures](https://img.shields.io/badge/Data%20Structures-BST-orange)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 A minimal example of a Binary Search Tree (BST) implemented with classes and recursion.
 

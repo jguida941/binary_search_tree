@@ -111,17 +111,16 @@ class BinarySearchTree:
         dfs(self.root)
         return result
 
-# Call the methods
-bst = BinarySearchTree()
-nodes = [50, 30, 20, 40, 70, 60, 80]
+# ===== demo / usage goes HERE =====
+if __name__ == "__main__":
+    bst = BinarySearchTree()
+    nodes = [50, 30, 20, 40, 70, 60, 80]
+    for k in nodes:
+        bst.insert(k)
 
-# Loop through nodes and insert them into the bst
-for node in nodes:
-    bst.insert(node)
-#Search for 80
-print('Search for 80:', bst.search(80))
+    # Search for 80 — prints "80" because TreeNode.__str__ returns the key
+    print('Search for 80:', bst.search(80))
 
-#Shows inorder before and after delete
-print("Inorder before delete:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
-bst.delete(80)
-print("Inorder after delete :", bst.inorder())  # [20, 30, 40, 50, 60, 70]
+    print("Inorder before delete:", bst.inorder())  # [20, 30, 40, 50, 60, 70, 80]
+    bst.delete(80)
+    print("Inorder after delete :", bst.inorder())  # [20, 30, 40, 50, 60, 70]
